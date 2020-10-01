@@ -1,14 +1,20 @@
 <template>
   <div id="app">
     <the-navigation />
+    <music-playing />
     <router-view />
   </div>
 </template>
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
+import MusicPlaying from "@/components/MusicPlaying.vue";
 export default {
   components: {
-    TheNavigation
+    TheNavigation,
+    MusicPlaying
+  },
+  data() {
+    return {};
   }
 };
 </script>
@@ -18,20 +24,23 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: url("./assets/bg.jpg");
-  background-size: cover;
+  width: 100%;
   height: 100vh;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.65)
+  );
 }
 
 #nav a.router-link-exact-active {
