@@ -8,20 +8,20 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/menu",
     name: "MusicMenu",
     component: () =>
-      import(/*webpackChunckName: "MusicMenu"*/ "@/views/MusicMenu.vue"),
-  },
+      import(/*webpackChunckName: "MusicMenu"*/ "@/views/MusicMenu.vue")
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

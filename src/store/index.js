@@ -5,20 +5,54 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    songPlaying: {
-      artist: "alol bi nanamol",
-      song: "hail the king pachala",
-      duration: "04:12",
-    },
     songs: [
       {
-        artist: "Kodi Angelo",
-        song: "high",
-        duration: "04:15",
+        artist: "Sleepmakeswaves",
+        song: "It's Dark, It's Cold, I'ts Winter",
+        slug: "itsdark.mp3"
       },
+      {
+        artist: "Death Grips",
+        song: "Guillotine",
+        slug: "guillotine.mp3"
+      },
+      {
+        artist: "Joy wants Eternity",
+        song: "From Embrace to Embrace",
+        slug: "embrace.mp3"
+      },
+      {
+        artist: "Com Truise",
+        song: "Cyanide Sisters",
+        slug: "cyanideSisters.mp3"
+      },
+      {
+        artist: "Best Coast",
+        song: "The Only Place",
+        slug: "place.mp3"
+      }
     ],
+    index: 0
   },
-  mutations: {},
+  getters: {
+    songPlaying: state => state.songs[state.index]
+  },
+  mutations: {
+    prev: state => {
+      if (state.index === 0) {
+        return (state.index = state.songs.length - 1);
+      } else {
+        return (state.index = state.index - 1);
+      }
+    },
+    next: state => {
+      if (state.index === state.songs.length - 1) {
+        return (state.index = 0);
+      } else {
+        return (state.index = state.index + 1);
+      }
+    }
+  },
   actions: {},
-  modules: {},
+  modules: {}
 });

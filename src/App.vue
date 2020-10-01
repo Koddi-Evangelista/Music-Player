@@ -1,17 +1,14 @@
 <template>
   <div id="app">
     <the-navigation />
-    <music-playing />
     <router-view />
   </div>
 </template>
 <script>
 import TheNavigation from "@/components/TheNavigation.vue";
-import MusicPlaying from "@/components/MusicPlaying.vue";
 export default {
   components: {
-    TheNavigation,
-    MusicPlaying
+    TheNavigation
   },
   data() {
     return {};

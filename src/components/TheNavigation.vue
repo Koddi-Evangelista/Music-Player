@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <span id="logo">VUE MUSIC PLAYER</span>
+    <router-link to="/"><span id="logo">VUE MUSIC PLAYER</span></router-link>
     <router-link to="/menu">Menu</router-link>
   </div>
 </template>
@@ -18,6 +18,9 @@ export default {
   justify-content: space-between;
   padding: 0 1rem;
   background-color: #222;
+}
+#nav a:first-child {
+  text-decoration: none;
 }
 #logo {
   font-weight: 800;
