@@ -2,9 +2,8 @@
   <div class="songPlaying">
     <div class="texts">
       <h1>{{ songPlaying.song }}</h1>
-      <h3>{{ songPlaying.artist }}</h3>
+      <h2>{{ songPlaying.artist }}</h2>
     </div>
-    <div class="time">hahahhaha</div>
   </div>
 </template>
 <script>
@@ -20,7 +19,6 @@ export default {
 <style scoped>
 div.songPlaying {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
   position: relative;
@@ -30,6 +28,7 @@ div.songPlaying {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   color: white;
+  overflow: hidden;
 }
 div.songPlaying::before {
   content: "";
@@ -42,14 +41,21 @@ div.songPlaying::before {
   filter: blur(10px);
 }
 .texts {
-  width: 60%;
-  background-color: rgba(255, 255, 255, 0.2);
+  width: 50%;
   height: 100%;
-  border: 1px solid white;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   padding: 0.5rem;
+  animation: move 10s ease infinite;
+}
+@keyframes move {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(200%);
+  }
 }
 </style>
